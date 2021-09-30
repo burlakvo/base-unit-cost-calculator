@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BaseUnitCost Calculator</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<header>
+		<h1 class="title">BaseUnitCost Calculator</h1>
+	</header>
+	<main>
+		<div class="head">
+			<select name="base_unit" id="base_unit">
+				<option value="1000">1kg or l</option>
+				<option value="100">100g or ml</option>
+				<option value="1">1pc</option>
+			</select>
+			<button class="btn btn__action" data-action="clear_all">Clear all</button>
+		</div>
+		<div class="items">
+			<div class="item">
+				<div class="actions">
+					<button class="btn btn__action" data-action="item_add">+</button>
+				</div>
+				<input type="text" class="cost" placeholder="cost">
+				<input type="text" class="quantity" placeholder="quantity">
+				<span class="base-unit-cost">?</span>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="copyright">made by Burlakov</div>
+		<ul class="links">
+			<li class="link">
+				<a href="https://github.com/burlakvo/hebrew-words">
+					<img src="./images/github.png" alt="GitHub">
+				</a>
+			</li>
+		</ul>
+	</footer>
+	<template id="template__item">
+		<div class="item">
+			<div class="actions">
+				<button class="btn btn__action" data-action="item_add">+</button>
+				<button class="btn btn__action btn_remove" data-action="item_remove">-</button>
+			</div>
+			<input type="text" class="cost" placeholder="cost">
+			<input type="text" class="quantity" placeholder="quantity">
+			<span class="base-unit-cost">?</span>
+		</div>
+	</template>
+</body>
+</html>

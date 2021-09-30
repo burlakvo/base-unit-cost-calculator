@@ -1,0 +1,151 @@
+/** Table of contents
+ *
+ * General
+ * Elements
+ * 	Links
+ * 	Buttons
+ * Media Queries
+ */
+
+/* General
+------------------------------------------------------------*/
+
+html {
+    font-size: 10px;
+
+    --color-white: #ecf0f1;
+	--color-black: #2c3e50;
+
+    --color-success: rgba(39, 174, 96, .8);
+    --color-wrong: rgba(192, 57, 43, .8);
+}
+
+body {
+    width: 100vw;
+	min-height: 100vh;
+	margin: 0;
+	overflow: hidden;
+	background: var(--color-white);
+	color: var(--color-black);
+	font-size: 2rem;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	grid-template-areas:
+		"h"
+		"m"
+		"f";
+}
+
+header {
+	grid-area: h;
+	text-align: center;
+}
+
+main {
+	grid-area: m;
+}
+
+footer {
+	grid-area: f;
+	display: flex;
+	justify-content: space-between;
+	padding: 5px;
+}
+
+img {
+	vertical-align: middle;
+}
+
+/* Calculator
+------------------------------------------------------------*/
+
+select,
+input {
+	font-size: 2rem;
+	vertical-align: middle;
+	border: 1px solid var(--color-black);
+}
+
+.head {
+	padding: 5px;
+}
+
+.item {
+	display: grid;
+	grid-template-columns: 90px 1fr 1fr 1fr;
+	grid-template-areas: "a c q b";
+	gap: 10px;
+	padding: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.item_best {
+	background-color: var(--color-success);
+}
+
+.actions {
+	grid-area: a;
+	display: flex;
+	justify-content: space-between;
+}
+
+.cost {
+	grid-area: c;
+}
+
+.quantity {
+	grid-area: q;
+}
+
+.base-unit-cost {
+	grid-area: b;
+}
+
+/* Elements
+------------------------------------------------------------*/
+
+/* Links
+------------------------------*/
+
+.links {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.link {
+	display: inline-block;
+}
+
+/* Buttons
+------------------------------*/
+
+.btn {
+	border: 1px solid var(--color-black);
+	background: transparent;
+	padding: 5px 15px;
+	transition: all .3s;
+}
+
+.btn:hover,
+.btn__action:hover {
+	cursor: pointer;
+}
+
+.btn:hover {
+	background: var(--color-black);
+	color: var(--color-white);
+}
+
+/* Media Queries
+------------------------------------------------------------*/
+
+@media (max-width: 768px) {
+	.item {
+		grid-template-columns: 90px 1fr 1fr;
+		grid-template-areas:
+			"a c q"
+			". b b";
+	}
+}
